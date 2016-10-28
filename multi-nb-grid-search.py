@@ -23,11 +23,11 @@ vectorizer =   TfidfVectorizer(min_df=1,stop_words="english",ngram_range=(1,2),t
 X_title = vectorizer.fit_transform(data)
 Y = target
 
-print X_title[0]
+print X_title[100]
 
 
 X_train, X_test, y_train, y_test = cross_validation.train_test_split(
-X_title, Y, test_size=0.2, random_state=4563)
+X_title, Y, test_size=0.1, random_state=4563)
 print "split complete"
 print X_train.shape
 
@@ -51,3 +51,4 @@ pred = clf.predict(X_test)
 
 accuracy = accuracy_score(y_test,pred)
 print (accuracy)
+
